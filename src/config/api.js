@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const chattiAPI = axios.create({
+const nootnootAPI = axios.create({
     baseURL: 'https://sutti1app.herokuapp.com/'
 })
 
-chattiAPI.interceptors.request.use(req => {
+nootnootAPI.interceptors.request.use(req => {
     const token = sessionStorage.getItem("token")
     console.log("interceptor token: ", token)
     if (token) {
@@ -13,4 +13,4 @@ chattiAPI.interceptors.request.use(req => {
     return req
 })
 
-export default chattiAPI
+export default nootnootAPI
